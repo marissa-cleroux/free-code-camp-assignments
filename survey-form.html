@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Free Code Camp Survey</title>
+    <link rel="stylesheet" href="styles/survey.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+</head>
+<body id="wrapper">
+
+    <header>
+        <h1 id="title">Learning Survey</h1>
+        <p id="description">Please answer this questions concerned with what kind of learner you are!</p>
+    </header>
+    <main>
+        <form method="get" name="survey-form" id="survey-form">
+            <label id="name-label" class="fmtlabel">First Name: </label>
+            <input name="name" type="text" id="name" size="30" maxlength="30" placeholder="Jane" class="fmtinput" required/>
+            <br/>
+            <label id="email-label" class="fmtlabel">Email: </label>
+            <input type="email" name="email" id="email" size="30" maxlength="30" placeholder="Smith" class="fmtinput" required/>
+            <br/>
+            <label for="number" id="number-label" class="fmtlabel">Age: </label>
+            <input type="number" name="number" id="number" size="30" min="0" max="115" placeholder="33" class="fmtinput"/>
+            <br/>
+
+            <div class="fmtMore">
+                <fieldset>
+                    <legend>Do you like to learn?</legend>
+                    <label><input type="radio" name="learner" value="1" id="like_0">Yes</label>
+                    <br/>
+                    <label><input type="radio" name="learner" value="2" id="like_1">No </label>
+                    <br/>
+                    <label><input type="radio" name="learner" value="3" id="like_2">It depends </label>
+                    <br/>
+                </fieldset>
+                <br/>
+
+                <fieldset>
+                    <legend>What kind of learning do you like to use?</legend>
+                    <label><input type="checkbox" name="learner" value="1" id="learner_0">Visual</label>
+                    <br/>
+                    <label><input type="checkbox" name="learner" value="2" id="learner_1">Auditory </label>
+                    <br/>
+                    <label><input type="checkbox" name="learner" value="3" id="learner_2">Reading/Writing </label>
+                    <br/>
+                    <label><input type="checkbox" name="learner" value="3" id="learner_3">Kinesthetic </label>
+                    <br/>
+                </fieldset>
+                <br/>
+
+                <fieldset>
+                    <legend>What is your favourite way to learn?</legend>
+                    <select name="dropdown" size="3" id="dropdown">
+                        <option>-- Select One --</option>
+                        <option>School</option>
+                        <option>Books</option>
+                        <option>Online Courses</option>
+                        <option>Various research methods</option>
+                        <option>Podcasts</option>
+                        <option>Documentaries</option>
+                        <option>I hate learning</option>
+                    </select>
+                </fieldset>
+                <br/>
+
+                <textarea name="question" rows="5" placeholder="Please tell us what you're currently learning right now:"></textarea><br/>
+
+                <input name="submit" type="submit" value="Submit" id="submit" >
+
+
+            </div>
+        </form>
+    </main>
+<script src="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js"></script>
+</body>
+</html>

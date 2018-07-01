@@ -1,0 +1,50 @@
+body {
+	background-color: #000;
+	background-image: url("../images/tribute/bo-play.png");
+}
+
+
+#main {
+	width: 100%; 
+	background-color: #fff;
+}
+
+#title {
+	text-align: center;
+	margin: auto;
+	font-family: "Unica one";
+	font-size: 4em;
+}
+
+#image {
+	max-width: 100%;
+	height: auto;
+}
+
+#img-div { width: 100%; }
+
+.book-cover {
+	width: 50%;
+	margin-right: 25%;
+	margin-left: 25%;
+	padding-bottom: 15px;
+
+}
+
+.row, h3, h1 { padding-bottom: 20px; }
+
+@media all and (min-width: 786px) {
+
+	.book-cover { width: 75%; }
+
+	#main  {
+		width: 90%;
+		margin: auto;
+	}
+
+	#image {
+		display: block;
+		margin: auto;
+	}
+
+}
