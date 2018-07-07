@@ -49,6 +49,14 @@ h2 {
     border-bottom: solid 2px #000;
 }
 
+main li { padding: 2px; }
+
+.take-note {
+    display: block;
+    padding: 10px 10px 10px 20px;
+    background-image: url("../images/documentation/stripes-light.png");
+}
+
 code {
     display: block;
     border: solid 1px #342E37;

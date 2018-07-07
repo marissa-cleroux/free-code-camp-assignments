@@ -18,7 +18,7 @@
             </ul>
     </nav>
     <main id="main-doc">
-        <section class="main-section">
+        <section class="main-section" id="Prerequisites">
             <header><h1>Prerequisites</h1></header>
             <article>
                 <p>Before starting this module, you should have some familiarity with HTML and CSS. You are advised to work through the <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">Introduction to HTML</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">Introduction to CSS</a> modules before starting on JavaScript.</p>
@@ -26,11 +26,11 @@
                 <p>JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). You'll come across it quite often, so in this article we give you all you need to work with JSON using JavaScript, including parsing JSON so you can access data within it, and creating JSON.</p>
             </article>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="What_is_JSON?">
             <header><h1>What is JSON?</h1></header>
             <article>
-                <p>JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON.</p>
-                <p>JSON exists as a string — useful when you want to transmit data across a network. It needs to be converted to a native JavaScript object when you want to access the data. This is not a big issue —  JavaScript provides a global JSON object that has methods available for converting between the two.</p>
+                <p>JSON is a text-based data format following JavaScript object syntax, which was popularized by <a href="https://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a>. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON.</p>
+                <p>JSON exists as a string — useful when you want to transmit data across a network. It needs to be converted to a native JavaScript object when you want to access the data. This is not a big issue —  JavaScript provides a global <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a> object that has methods available for converting between the two.</p>
                 <p class="take-note">Note: Converting a string to a native object is called parsing, while converting a native object to a string so it can be transmitted across the network is called stringification.</p>
                 <p>A JSON object can be stored in its own file, which is basically just a text file with an extension of .json, and a MIME type of application/json.</p>
                 <h2>JSON Structure</h2>
@@ -76,7 +76,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
                     }</code>
-                <p> we loaded this object into a JavaScript program, parsed in a variable called superHeroes for example, we could then access the data inside it using the same dot/bracket notation we looked at in the JavaScript object basics article. For example:</p>
+                <p>If we loaded this object into a JavaScript program, parsed in a variable called <span class="inline-code">superHeroes</span> for example, we could then access the data inside it using the same dot/bracket notation we looked at in the <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics">JavaScript object basics</a> article. For example:</p>
                 <code>superHeroes.homeTown<br/>
                     superHeroes['active']</code>
                 <p>To access data further down the hierarchy, you simply have to chain the required property names and array indexes together.  For example, to access the third superpower of the second hero listed in the members list, you'd do this:</p>
@@ -88,6 +88,7 @@
                     <li>Inside this object, we want to access the powers property, so we use <span class="inline-code">["powers"]</span>.</li>
                     <li>Inside the powers property is an array containing the selected hero's superpowers. We want the third one, so we use <span class="inline-code">[2]</span>.</li>
                 </ol>
+                <p class="take-note">Note: We've made the JSON seen above available inside a variable in our <a href="https://mdn.github.io/learning-area/javascript/oojs/json/JSONTest.html">JSONTest.html</a> example (see the <a href="https://github.com/mdn/learning-area/blob/master/javascript/oojs/json/JSONTest.html">source code</a>). Try loading this up and then accessing data inside the variable via your browser's JavaScript console.</p>
                 <h2>Arrays as JSON</h2>
                 <p>Above we mentioned that JSON text basically looks like a JavaScript object, and this is mostly right. The reason we said "mostly right" is that an array is also valid JSON, for example:</p>
                 <code>
@@ -125,17 +126,132 @@
                 </ul>
             </article>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="Active_learning_working_through_a_JSON_example">
             <header><h1>Active learning: Working through a JSON example</h1></header>
             <article>
                 <p>So, let's work through an example to show how we could make use of some JSON data on a website.</p>
+                <h2>Getting Started</h2>
+                <p>To begin with, make local copies of our <a href="https://github.com/mdn/learning-area/blob/master/javascript/oojs/json/heroes.html">heroes.html</a> and <a href="https://github.com/mdn/learning-area/blob/master/javascript/oojs/json/style.css">style.css</a> files. The latter contains some simple CSS to style our page, while the former contains some very simple body HTML:</p>
+                <code>
+                    &lt;header&gt;<br/>
+                    &lt;/header&gt;<br/>
+                    <br/>
+                    &lt;section&gt;<br/>
+                    &lt;/section&gt;<br/>
+                </code>
+                <p>Plus a <span class="inline-code">&lt;script&gt;</span> element to contain the JavaScript code we will be writing in this exercise. At the moment it only contains two lines, which grab references to the <span class="inline-code">&lt;header&gt;</span> and <span class="inline-code">&lt;section&gt;</span> elements and store them in variables:</p>
+                <code>
+                    var header = document.querySelector('header');<br/>
+                    var section = document.querySelector('section');<br/>
+                </code>
+                <p>We have made our JSON data available on our GitHub, at <a href="https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json">https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json.</a></p>
+
+                <p>We are going to load it into our page, and use some nifty DOM manipulation to display it, like this:</p>
+                <img src="https://mdn.mozillademos.org/files/13857/json-superheroes.png" alt="Picture of the product">
+                <h2>Obtaining the JSON</h2>
+                <p>To obtain the JSON, we are going to use an API called <span class="inline-code"><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a></span> (often called XHR). This is a very useful JavaScript object that allows us to make network requests to retrieve resources from a server via JavaScript (e.g. images, text, JSON, even HTML snippets), meaning that we can update small sections of content without having to reload the entire page. This has led to more responsive web pages, and sounds exciting, but it is unfortunately beyond the scope of this article to teach it in much more detail.</p>
+
+                <ol>
+                    <li>To start with, we are going to store the URL of the JSON we want to retrieve in a variable. Add the following at the bottom of your JavaScript code:
+                        <br/>
+                        <br/>
+                        <code>var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';</code>
+                    </li>
+                    <li>To create a request, we need to create a new request object instance from the <span class="inline-code">XMLHttpRequest</span> constructor, using the <span class="inline-code">new</span> keyword. Add the following below your last line:
+                        <br/>
+                        <br/>
+                        <code>var request = new XMLHttpRequest();</code>
+                    </li>
+                    <li>Now we need to open a new request using the <span class="inline-code">open()</span> method. Add the following line:
+                        <br/>
+                        <br/>
+                        <code>request.open('GET', requestURL);</code>
+                        This takes at least two parameters — there are other optional parameters available. We only need the two mandatory ones for this simple example:
+                        <ul>
+                            <li>The HTTP method to use when making the network request. In this case <span class="inline-code">GET</span> is fine, as we are just retrieving some simple data.</li>
+                            <li>The URL to make the request to — this is the URL of the JSON file that we stored earlier.</li>
+                        </ul>
+                    </li>
+                    <li>Next, add the following two lines — here we are setting the <span class="inline-code">responseType</span> to JSON, so that XHR knows that the server will be returning JSON, and that this should be converted behind the scenes into a JavaScript object. Then we send the request with the <span class="inline-code">send()</span> method:
+                        <br/>
+                        <br/>
+                        <code>
+                            request.responseType = 'json';<br/>
+                            request.send();
+                        </code>
+                    </li>
+                    <li>The last bit of this section involves waiting for the response to return from the server, then dealing with it. Add the following code below your previous code:
+                        <br/>
+                        <br/>
+                        <code>
+                            request.onload = function() {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;var superHeroes = request.response;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;populateHeader(superHeroes);<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;showHeroes(superHeroes);<br/>
+                            }
+                        </code>
+                    </li>
+                </ol>
+                <p>Here we are storing the response to our request (available in the <span class="inline-code"><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response">response</a></span> property) in a variable called <span class="inline-code">superHeroes</span>; this variable will now contain the JavaScript object based on the JSON! We are then passing that object to two function calls — the first one will fill the <span class="inline-code">&lt;header&gt;</span> with the correct data, while the second one will create an information card for each hero on the team, and insert it into the <span class="inline-code">&lt;section&gt;</span>.</p>
+                <p>We have wrapped the code in an event handler that runs when the load event fires on the request object (see <span class="inline-code"><a href="">onload</a></span>) — this is because the load event fires when the response has successfully returned; doing it this way guarantees that <span class="inline-code">request.response</span> will definitely be available when we come to try to do something with it.</p>
+
+                <h2>Populating the header</h2>
+                <p>Now we've retrieved the JSON data and converted it into a JavaScript object, let's make use of it by writing the two functions we referenced above. First of all, add the following function definition below the previous code:</p>
+                <code>
+                    function populateHeader(jsonObj) {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;var myH1 = document.createElement('h1');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;myH1.textContent = jsonObj['squadName'];<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;header.appendChild(myH1);<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;var myPara = document.createElement('p');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;header.appendChild(myPara);<br/>
+                    }
+                </code>
+                <p>We have called the parameter <span class="inline-code">jsonObj</span>, to remind ourselves that this JavaScript object originated from JSON. Here we first create an <span class="inline-code">&lt;h1&gt;</span> element with <span class="inline-code">createElement()</span>, set its <span class="inline-code">textContent</span> to equal the <span class="inline-code">squadName</span> property of the object, then append it to the header using <span class="inline-code">appendChild()</span>. We then do a very similar operation with a paragraph: create it, set its text content and append it to the header. The only difference is that its text is set to a concatenated string containing both the <span class="inline-code">homeTown</span> and <span class="inline-code">formed</span> properties of the object.</p>
+                <h2>Creating the hero information cards</h2>
+                <p>Next, add the following function at the bottom of the code, which creates and displays the superhero cards:</p>
+                <code>
+                    function showHeroes(jsonObj) {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;var heroes = jsonObj['members'];<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i < heroes.length; i++) {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myArticle = document.createElement('article');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myH2 = document.createElement('h2');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myPara1 = document.createElement('p');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myPara2 = document.createElement('p');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myPara3 = document.createElement('p');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myList = document.createElement('ul');<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myH2.textContent = heroes[i].name;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myPara2.textContent = 'Age: ' + heroes[i].age;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myPara3.textContent = 'Superpowers:';<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var superPowers = heroes[i].powers;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var j = 0; j < superPowers.length; j++) {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var listItem = document.createElement('li');<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listItem.textContent = superPowers[j];<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myList.appendChild(listItem);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myArticle.appendChild(myH2);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myArticle.appendChild(myPara1);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myArticle.appendChild(myPara2);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myArticle.appendChild(myPara3);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myArticle.appendChild(myList);<br/>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;section.appendChild(myArticle);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                    }<br/>
+                </code>
             </article>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="Converting_between_object_and_text">
             <header></header>
             <article></article>
         </section>
-        <section class="main-section">
+        <section class="main-section" id="Summary">
             <header></header>
             <article></article>
         </section>
