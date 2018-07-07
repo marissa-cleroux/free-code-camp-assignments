@@ -11,9 +11,9 @@
         <header><h1>Working with JSON</h1></header>
             <ul>
                 <li><a class="nav-link" href="#Prerequisites" rel="internal">Prerequisites</a></li>
-                <li><a class="nav-link" href="#What_is_JSON?" rel="internal">What is JSON?</a></li>
+                <li><a class="nav-link" href="#What_is_JSON" rel="internal">What is JSON?</a></li>
                 <li><a class="nav-link" href="#Active_learning_working_through_a_JSON_example" rel="internal">Active learning: Working through a JSON example</a></li>
-                <li><a class="nav-link" href="#Converting_between_object_and_text" rel="internal">Converting between objects and text</a></li>
+                <li><a class="nav-link" href="#Converting_between_objects_and_text" rel="internal">Converting between objects and text</a></li>
                 <li><a class="nav-link" href="#Summary" rel="internal">Summary</a></li>
             </ul>
     </nav>
@@ -26,7 +26,7 @@
                 <p>JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). You'll come across it quite often, so in this article we give you all you need to work with JSON using JavaScript, including parsing JSON so you can access data within it, and creating JSON.</p>
             </article>
         </section>
-        <section class="main-section" id="What_is_JSON?">
+        <section class="main-section" id="What_is_JSON">
             <header><h1>What is JSON?</h1></header>
             <article>
                 <p>JSON is a text-based data format following JavaScript object syntax, which was popularized by <a href="https://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a>. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON.</p>
@@ -253,17 +253,53 @@
                     <li>Fill the three paragraphs with their <span class="inline-code">secretIdentity</span>, <span class="inline-code">age</span>, and a line saying "Superpowers:" to introduce the information in the list.</li>
                     <li>Store the <span class="inline-code">powers</span> property in another new variable called <span class="inline-code">superPowers</span> — this contains an array that lists the current hero's superpowers.</li>
                     <li>Use another <span class="inline-code">for</span> loop to loop through the current hero's superpowers — for each one we create a <span class="inline-code">&lt;li&gt;</span> element, put the superpower inside it, then put the <span class="inline-code">listItem</span> inside the <span class="inline-code">&lt;ul&gt;</span> element (<span class="inline-code">myList</span>) using <span class="inline-code">appendChild()</span>.</li>
-                    <li>The very last thing we do is to append the <span class="inline-code">&lt;h2&gt;</span>, <span class="inline-code">&lt;p&gt;</span>s, and <span class="inline-code">&lt;ul&gt;</span> inside the <span class="inline-code">&lt;article&gt;</span> (myArticle), then append the <span class="inline-code">&lt;article&gt;</span> inside the <span class="inline-code">&lt;section&gt;</span>. The order in which things are appended is important, as this is the order they will be displayed inside the HTML.</li>
+                    <li>The very last thing we do is to append the <span class="inline-code">&lt;h2&gt;</span>, <span class="inline-code">&lt;p&gt;</span>s, and <span class="inline-code">&lt;ul&gt;</span> inside the <span class="inline-code">&lt;article&gt;</span> (<span class="inline-code">myArticle</span>), then append the <span class="inline-code">&lt;article&gt;</span> inside the <span class="inline-code">&lt;section&gt;</span>. The order in which things are appended is important, as this is the order they will be displayed inside the HTML.</li>
                 </ol>
+                <p class="take-note">Note: If you are having trouble getting the example to work, try referring to our <a href="https://github.com/mdn/learning-area/blob/master/javascript/oojs/json/heroes-finished.html">heroes-finished.html</a> source code (see it <a href="https://mdn.github.io/learning-area/javascript/oojs/json/heroes-finished.html">running live</a> also.)</p>
+                <p class="take-note">Note: If you are having trouble following the dot/bracket notation we are using to access the JavaScript object, it can help to have the <a href="https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json">superheroes.json</a> file open in another tab or your text editor, and refer to it as you look at our JavaScript. You should also refer back to our <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics">JavaScript object</a> basics article for more information on dot and bracket notation.</p>
             </article>
         </section>
-        <section class="main-section" id="Converting_between_object_and_text">
-            <header></header>
-            <article></article>
+        <section class="main-section" id="Converting_between_objects_and_text">
+            <header><h1>Converting between objects and text</h1></header>
+            <article>
+                <p>The above example was simple in terms of accessing the JavaScript object, because we set the XHR request to convert the JSON response directly into a JavaScript object using:</p>
+                <code>request.responseType = 'json';</code>
+                <p>But sometimes we aren't so lucky — sometimes we'll receive a raw JSON string, and we'll need to convert it to an object ourselves. And when we want to send a JavaScript object across the network, we'll need to convert it to JSON (a string) before sending. Luckily, these two problems are so common in web development that a built-in JSON object is available in browsers, which contains the following two methods:</p>
+                <ul>
+                    <li><span class="inline-code">parse()</span>: Accepts a JSON string as a parameter, and returns the corresponding JavaScript object.</li>
+                    <li><span class="inline-code">stringify()</span>: Accepts an object as a parameter, and returns the equivalent JSON string form.</li>
+                </ul>
+                <p>You can see the first one in action in our <span class="inline-code"><a href="https://mdn.github.io/learning-area/javascript/oojs/json/heroes-finished-json-parse.html">heroes-finished-json-parse.html</a></span> example (see the <a href="https://github.com/mdn/learning-area/blob/master/javascript/oojs/json/heroes-finished-json-parse.html">source code</a>) — this does exactly the same thing as the example we built up earlier, except that we set the XHR to return the raw JSON text, then used <span class="inline-code">parse()</span> to convert it to an actual JavaScript object. The key snippet of code is here:</p>
+                <code>
+                    request.open('GET', requestURL);
+                    request.responseType = 'text'; // now we're getting a string!
+                    request.send();
+
+                    request.onload = function() {
+                    &nbsp;&nbsp;&nbsp;&nbsp;var superHeroesText = request.response; // get the string from the response
+                    &nbsp;&nbsp;&nbsp;&nbsp;var superHeroes = JSON.parse(superHeroesText); // convert it to an object
+                    &nbsp;&nbsp;&nbsp;&nbsp;populateHeader(superHeroes);
+                    &nbsp;&nbsp;&nbsp;&nbsp;showHeroes(superHeroes);
+                    }
+                </code>
+                <p>As you might guess, <span class="inline-code">stringify()</span> works the opposite way. Try entering the following lines into your browser's JavaScript console one by one to see it in action:</p>
+                <code>
+                    var myJSON = { "name": "Chris", "age": "38" };
+                    myJSON
+                    var myString = JSON.stringify(myJSON);
+                    myString
+                </code>
+                <p>Here we're creating a JavaScript object, then checking what it contains, then converting it to a JSON string using <span class="inline-code">stringify()</span> — saving the return value in a new variable — then checking it again.</p>
+            </article>
         </section>
         <section class="main-section" id="Summary">
-            <header></header>
-            <article></article>
+            <header><h1>Summary</h1></header>
+            <article>
+                <p>In this article, we've given you a simple guide to using JSON in your programs, including how to create and parse JSON, and how to access data locked inside it. In the next article, we'll begin looking at object-oriented JavaScript.</p>
+            </article>
+        </section>
+        <section>
+        <p>All this documentation has been lifted from <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">Mozilla</a></a></p>
         </section>
     </main>
 </body>
