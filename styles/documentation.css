@@ -1,0 +1,59 @@
+/*
+    #3C91E6 - bright blue
+    #342E37 - almost black
+    #A2D729 - lime green
+    #FAFFFD - off-white
+    #FA824C - peachy salmon
+
+*/
+
+body {
+    background-color: #FFF;
+    margin: auto;
+}
+
+main, nav, code { padding: 10px; }
+
+h1 { font-size: 2em; }
+
+h1, h2 {
+    font-family: 'Abel', verdana, sans-serif;
+    color: #342E37;
+}
+
+nav {
+    line-height: 2em;
+    font-family: 'Ubuntu mono', monospace, sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: right;
+}
+
+nav li {
+    border-bottom: solid 2px #7C0E3E;
+}
+nav a { text-decoration: none; }
+
+a { color: #000; }
+
+nav a:hover, main a:hover { color: #24897B; }
+
+section { border-top: dashed 2px #342E37; }
+
+p, ol, ul { font-family: Ubuntu, sans-serif; }
+
+h2 {
+    font-size: 1.5em;
+    border-bottom: solid 2px #000;
+}
+
+code {
+    display: block;
+    border: solid 1px #342E37;
+    background-color: aliceblue;
+}
+
+.inline-code { font-family: monospace; }
+

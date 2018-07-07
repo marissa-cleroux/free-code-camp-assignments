@@ -1,29 +1,14 @@
-<!--Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/NdrKKL.
-Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
-User Story #4: Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
-User Story #5: The .main-section elements should contain at least 10 p elements total (not each).
-User Story #6: The .main-section elements should contain at least 5 code elements total (not each).
-User Story #7: The .main-section elements should contain at least 5 li items total (not each).
-User Story #8: I can see a nav element with a corresponding id="navbar".
-User Story #9: The navbar element should contain one header element which contains text that describes the topic of the technical documentation.
-User Story #10: Additionally, the navbar should contain link (a) elements with the class of nav-link. There should be one for every element with the class main-section.
-User Story #11: The header element in the navbar must come before any link (a) elements in the navbar.
-User Story #12: Each element with the class of nav-link should contain text that corresponds to the header text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world").
-User Story #13: When I click on a navbar element, the page should navigate to the corresponding section of the main-doc element (e.g. If I click on a nav-link element that contains the text "Hello world", the page navigates to a section element that has that id and contains the corresponding header.
-User Story #14: On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user.
-User Story #15: My Technical Documentation page should use at least one media query.-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Working With JSON</title>
     <link rel="stylesheet" href="styles/documentation.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Ubuntu|Ubuntu+Mono" rel="stylesheet">
 </head>
 <body>
     <nav id="navbar">
-        <header>Working with JSON</header>
+        <header><h1>Working with JSON</h1></header>
             <ul>
                 <li><a class="nav-link" href="#Prerequisites" rel="internal">Prerequisites</a></li>
                 <li><a class="nav-link" href="#What_is_JSON?" rel="internal">What is JSON?</a></li>
@@ -51,45 +36,45 @@ User Story #15: My Technical Documentation page should use at least one media qu
                 <h2>JSON Structure</h2>
                 <p>As described above, a JSON is a string whose format very much resembles JavaScript object literal format. You can include the same basic data types inside JSON as you can in a standard JavaScript object — strings, numbers, arrays, booleans, and other object literals. This allows you to construct a data hierarchy, like so:</p>
                 <code>{<br/>
-                    "squadName": "Super hero squad",<br/>
-                    "homeTown": "Metro City",<br/>
-                    "formed": 2016,<br/>
-                    "secretBase": "Super tower",<br/>
-                    "active": true,<br/>
-                    "members": [<br/>
-                    {<br/>
-                    "name": "Molecule Man",<br/>
-                    "age": 29,<br/>
-                    "secretIdentity": "Dan Jukes",<br/>
-                    "powers": [<br/>
-                    "Radiation resistance",<br/>
-                    "Turning tiny",<br/>
-                    "Radiation blast"<br/>
-                    ]<br/>
-                    },<br/>
-                    {<br/>
-                    "name": "Madame Uppercut",<br/>
-                    "age": 39,<br/>
-                    "secretIdentity": "Jane Wilson",<br/>
-                    "powers": [<br/>
-                    "Million tonne punch",<br/>
-                    "Damage resistance",<br/>
-                    "Superhuman reflexes"<br/>
-                    ]<br/>
-                    },<br/>
-                    {<br/>
-                    "name": "Eternal Flame",<br/>
-                    "age": 1000000,<br/>
-                    "secretIdentity": "Unknown",<br/>
-                    "powers": [<br/>
-                    "Immortality",<br/>
-                    "Heat Immunity",<br/>
-                    "Inferno",<br/>
-                    "Teleportation",<br/>
-                    "Interdimensional travel"<br/>
-                    ]<br/>
-                    }<br/>
-                    ]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"squadName": "Super hero squad",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"homeTown": "Metro City",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"formed": 2016,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"secretBase": "Super tower",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"active": true,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"members": [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Molecule Man",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 29,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"secretIdentity": "Dan Jukes",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"powers": [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Radiation resistance",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Turning tiny",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Radiation blast"<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Madame Uppercut",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 39,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"secretIdentity": "Jane Wilson",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"powers": [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Million tonne punch",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Damage resistance",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Superhuman reflexes"<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Eternal Flame",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 1000000,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"secretIdentity": "Unknown",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"powers": [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Immortality",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Heat Immunity",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Inferno",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Teleportation",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Interdimensional travel"<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
                     }</code>
                 <p> we loaded this object into a JavaScript program, parsed in a variable called superHeroes for example, we could then access the data inside it using the same dot/bracket notation we looked at in the JavaScript object basics article. For example:</p>
                 <code>superHeroes.homeTown<br/>
@@ -97,44 +82,54 @@ User Story #15: My Technical Documentation page should use at least one media qu
                 <p>To access data further down the hierarchy, you simply have to chain the required property names and array indexes together.  For example, to access the third superpower of the second hero listed in the members list, you'd do this:</p>
                 <code>superHeroes['members'][1]['powers'][2]</code>
                 <ol>
-                    <li>First we have the variable name — superHeroes.</li>
-                    <li>Inside that we want to access the members property, so we use ["members"].</li>
-                    <li><span class="inline-code">members</span> contains an array populated by objects. We want to access the second object inside the array, so we use [1].</li>
-                    <li>Inside this object, we want to access the powers property, so we use ["powers"].</li>
-                    <li>Inside the powers property is an array containing the selected hero's superpowers. We want the third one, so we use [2].</li>
+                    <li>First we have the variable name — <span class="inline-code">superHeroes</span>.</li>
+                    <li>Inside that we want to access the members property, so we use <span class="inline-code">["members"]</span>.</li>
+                    <li><span class="inline-code">members</span> contains an array populated by objects. We want to access the second object inside the array, so we use <span class="inline-code">[1]</span>.</li>
+                    <li>Inside this object, we want to access the powers property, so we use <span class="inline-code">["powers"]</span>.</li>
+                    <li>Inside the powers property is an array containing the selected hero's superpowers. We want the third one, so we use <span class="inline-code">[2]</span>.</li>
                 </ol>
                 <h2>Arrays as JSON</h2>
                 <p>Above we mentioned that JSON text basically looks like a JavaScript object, and this is mostly right. The reason we said "mostly right" is that an array is also valid JSON, for example:</p>
                 <code>
                     [<br/>
-                    {<br/>
-                    "name": "Molecule Man",<br/>
-                    "age": 29,<br/>
-                    "secretIdentity": "Dan Jukes",<br/>
-                    "powers": [<br/>
-                    "Radiation resistance",<br/>
-                    "Turning tiny",<br/>
-                    "Radiation blast"<br/>
-                    ]<br/>
-                    },<br/>
-                    {<br/>
-                    "name": "Madame Uppercut",<br/>
-                    "age": 39,<br/>
-                    "secretIdentity": "Jane Wilson",<br/>
-                    "powers": [<br/>
-                    "Million tonne punch",<br/>
-                    "Damage resistance",<br/>
-                    "Superhuman reflexes"<br/>
-                    ]<br/>
-                    }<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Molecule Man",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 29,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"secretIdentity": "Dan Jukes",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"powers": [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Radiation resistance",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Turning tiny",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Radiation blast"<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Madame Uppercut",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"age": 39,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"secretIdentity": "Jane Wilson",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"powers": [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Million tonne punch",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Damage resistance",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Superhuman reflexes"<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
                     ]<br/>
                 </code>
-
+                <p>The above is perfectly valid JSON. You'd just have to access array items (in its parsed version) by starting with an array index, for example <span class="inline-code">[0]["powers"][0].</span></p>
+                <h2>Other Notes:</h2>
+                <ul>
+                    <li>JSON is purely a data format — it contains only properties, no methods.</li>
+                    <li>JSON requires double quotes to be used around strings and property names. Single quotes are not valid.</li>
+                    <li>Even a single misplaced comma or colon can cause a JSON file to go wrong, and not work. You should be careful to validate any data you are attempting to use (although computer-generated JSON is less likely to include errors, as long as the generator program is working correctly). You can validate JSON using an application like JSONLint.</li>
+                    <li>JSON can actually take the form of any data type that is valid for inclusion inside JSON, not just arrays or objects. So for example, a single string or number would be a valid JSON object.</li>
+                    <li>Unlike in JavaScript code in which object properties may be unquoted, in JSON, only quoted strings may be used as properties.</li>
+                </ul>
             </article>
         </section>
         <section class="main-section">
-            <header></header>
-            <article></article>
+            <header><h1>Active learning: Working through a JSON example</h1></header>
+            <article>
+                <p>So, let's work through an example to show how we could make use of some JSON data on a website.</p>
+            </article>
         </section>
         <section class="main-section">
             <header></header>
