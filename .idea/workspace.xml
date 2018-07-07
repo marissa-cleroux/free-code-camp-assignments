@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fbc65bc-5ba0-4247-aa72-7d42a90ad157" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/images/documentation/stripes-light.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/documentation.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/documentation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-documentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/technical-documentation.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="technical-documentation.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="technical-documentation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/technical-documentation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            <state relative-caret-position="372">
+              <caret line="139" column="41" lean-forward="true" selection-start-line="139" selection-start-column="41" selection-end-line="139" selection-end-column="41" />
               <folding>
                 <element signature="e#6165#6171#0" expanded="true" />
                 <element signature="e#6171#6177#0" expanded="true" />
@@ -891,18 +889,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="documentation.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="documentation.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/documentation.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+            <state relative-caret-position="221">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="tribute.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/tribute.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="35" column="35" lean-forward="true" selection-start-line="35" selection-end-line="35" selection-end-column="35" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -918,6 +920,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>XML</find>
+      <find>Gettin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -926,8 +929,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/styles/documentation.css" />
         <option value="$PROJECT_DIR$/technical-documentation.html" />
+        <option value="$PROJECT_DIR$/styles/documentation.css" />
       </list>
     </option>
   </component>
@@ -1016,12 +1019,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530985108987</updated>
-      <workItem from="1530985110767" duration="11589000" />
+      <workItem from="1530985110767" duration="12193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11589000" />
+    <option name="totallyTimeSpent" value="12193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="399" y="0" width="1189" height="867" extended-state="0" />
@@ -1063,20 +1066,10 @@
     <entry file="file://$PROJECT_DIR$/styles/landing-page.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/tribute.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/documentation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/technical-documentation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+        <state relative-caret-position="372">
+          <caret line="139" column="41" lean-forward="true" selection-start-line="139" selection-start-column="41" selection-end-line="139" selection-end-column="41" />
           <folding>
             <element signature="e#6165#6171#0" expanded="true" />
             <element signature="e#6171#6177#0" expanded="true" />
@@ -1940,6 +1933,20 @@
             <element signature="e#25625#25631#0" expanded="true" />
             <element signature="e#25631#25637#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/tribute.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="35" column="35" lean-forward="true" selection-start-line="35" selection-end-line="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/documentation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>

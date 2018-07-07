@@ -65,3 +65,20 @@ code {
 
 .inline-code { font-family: monospace; }
 
+
+@media all and (min-width: 900px) {
+    nav {
+        position: fixed;
+        text-align: left;
+        display: inline;
+        width: 20%;
+        height: 100%;
+        padding: 0 10px 0 10px;
+        border-right: solid 2px #342E37;
+    }
+
+    nav li { margin-left: -15%;}
+
+    main { margin-left: 23%; }
+
+}
