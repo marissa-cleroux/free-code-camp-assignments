@@ -18,32 +18,119 @@ User Story #15: My Technical Documentation page should use at least one media qu
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SCCM Application Delivery Documentation</title>
+    <title>Working With JSON</title>
     <link rel="stylesheet" href="styles/documentation.css" type="text/css"/>
 </head>
 <body>
     <nav id="navbar">
-        <header>SCCM Application Delivery</header>
+        <header>Working with JSON</header>
             <ul>
-                <li><a class="nav-link" href="#Introduction" rel="internal">Introduction</a></li>
-                <li><a class="nav-link" href="#What_is_SCCM?" rel="internal">What is SCCM?</a></li>
-                <li><a class="nav-link" href="#Your_daily_routine" rel="internal">Your daily routine</a></li>
-                <li><a class="nav-link" href="#Putting_applications_into_testing" rel="internal">Putting applications into testing</a></li>
-                <li><a class="nav-link" href="#Putting_applications_into_production" rel="internal">Putting applications into production</a></li>
-                <li><a class="nav-link" href="#Troubleshooting" rel="internal">Troubleshooting</a></li>
-                <li><a class="nav-link" href="#Glossary" rel="internal">Glossary</a></li>
-                <li><a class="nav-link" href="#Appendix_A_testing_checklist" rel="internal">Appendix A: Testing Checklist</a></li>
-                <li><a class="nav-link" href="#Appendix_B_production_checklist" rel="internal">Appendix B: Production Checklist</a></li>
+                <li><a class="nav-link" href="#Prerequisites" rel="internal">Prerequisites</a></li>
+                <li><a class="nav-link" href="#What_is_JSON?" rel="internal">What is JSON?</a></li>
+                <li><a class="nav-link" href="#Active_learning_working_through_a_JSON_example" rel="internal">Active learning: Working through a JSON example</a></li>
+                <li><a class="nav-link" href="#Converting_between_object_and_text" rel="internal">Converting between objects and text</a></li>
+                <li><a class="nav-link" href="#Summary" rel="internal">Summary</a></li>
             </ul>
     </nav>
     <main id="main-doc">
         <section class="main-section">
-            <header></header>
-            <article></article>
+            <header><h1>Prerequisites</h1></header>
+            <article>
+                <p>Before starting this module, you should have some familiarity with HTML and CSS. You are advised to work through the <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">Introduction to HTML</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">Introduction to CSS</a> modules before starting on JavaScript.</p>
+                <p>You should also have some familiarity with JavaScript basics before looking at JavaScript objects in detail. Before attempting this module, work through <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps">JavaScript first steps</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks">JavaScript building blocks.</a></p>
+                <p>JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa). You'll come across it quite often, so in this article we give you all you need to work with JSON using JavaScript, including parsing JSON so you can access data within it, and creating JSON.</p>
+            </article>
         </section>
         <section class="main-section">
-            <header></header>
-            <article></article>
+            <header><h1>What is JSON?</h1></header>
+            <article>
+                <p>JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON.</p>
+                <p>JSON exists as a string — useful when you want to transmit data across a network. It needs to be converted to a native JavaScript object when you want to access the data. This is not a big issue —  JavaScript provides a global JSON object that has methods available for converting between the two.</p>
+                <p class="take-note">Note: Converting a string to a native object is called parsing, while converting a native object to a string so it can be transmitted across the network is called stringification.</p>
+                <p>A JSON object can be stored in its own file, which is basically just a text file with an extension of .json, and a MIME type of application/json.</p>
+                <h2>JSON Structure</h2>
+                <p>As described above, a JSON is a string whose format very much resembles JavaScript object literal format. You can include the same basic data types inside JSON as you can in a standard JavaScript object — strings, numbers, arrays, booleans, and other object literals. This allows you to construct a data hierarchy, like so:</p>
+                <code>{<br/>
+                    "squadName": "Super hero squad",<br/>
+                    "homeTown": "Metro City",<br/>
+                    "formed": 2016,<br/>
+                    "secretBase": "Super tower",<br/>
+                    "active": true,<br/>
+                    "members": [<br/>
+                    {<br/>
+                    "name": "Molecule Man",<br/>
+                    "age": 29,<br/>
+                    "secretIdentity": "Dan Jukes",<br/>
+                    "powers": [<br/>
+                    "Radiation resistance",<br/>
+                    "Turning tiny",<br/>
+                    "Radiation blast"<br/>
+                    ]<br/>
+                    },<br/>
+                    {<br/>
+                    "name": "Madame Uppercut",<br/>
+                    "age": 39,<br/>
+                    "secretIdentity": "Jane Wilson",<br/>
+                    "powers": [<br/>
+                    "Million tonne punch",<br/>
+                    "Damage resistance",<br/>
+                    "Superhuman reflexes"<br/>
+                    ]<br/>
+                    },<br/>
+                    {<br/>
+                    "name": "Eternal Flame",<br/>
+                    "age": 1000000,<br/>
+                    "secretIdentity": "Unknown",<br/>
+                    "powers": [<br/>
+                    "Immortality",<br/>
+                    "Heat Immunity",<br/>
+                    "Inferno",<br/>
+                    "Teleportation",<br/>
+                    "Interdimensional travel"<br/>
+                    ]<br/>
+                    }<br/>
+                    ]<br/>
+                    }</code>
+                <p> we loaded this object into a JavaScript program, parsed in a variable called superHeroes for example, we could then access the data inside it using the same dot/bracket notation we looked at in the JavaScript object basics article. For example:</p>
+                <code>superHeroes.homeTown<br/>
+                    superHeroes['active']</code>
+                <p>To access data further down the hierarchy, you simply have to chain the required property names and array indexes together.  For example, to access the third superpower of the second hero listed in the members list, you'd do this:</p>
+                <code>superHeroes['members'][1]['powers'][2]</code>
+                <ol>
+                    <li>First we have the variable name — superHeroes.</li>
+                    <li>Inside that we want to access the members property, so we use ["members"].</li>
+                    <li><span class="inline-code">members</span> contains an array populated by objects. We want to access the second object inside the array, so we use [1].</li>
+                    <li>Inside this object, we want to access the powers property, so we use ["powers"].</li>
+                    <li>Inside the powers property is an array containing the selected hero's superpowers. We want the third one, so we use [2].</li>
+                </ol>
+                <h2>Arrays as JSON</h2>
+                <p>Above we mentioned that JSON text basically looks like a JavaScript object, and this is mostly right. The reason we said "mostly right" is that an array is also valid JSON, for example:</p>
+                <code>
+                    [<br/>
+                    {<br/>
+                    "name": "Molecule Man",<br/>
+                    "age": 29,<br/>
+                    "secretIdentity": "Dan Jukes",<br/>
+                    "powers": [<br/>
+                    "Radiation resistance",<br/>
+                    "Turning tiny",<br/>
+                    "Radiation blast"<br/>
+                    ]<br/>
+                    },<br/>
+                    {<br/>
+                    "name": "Madame Uppercut",<br/>
+                    "age": 39,<br/>
+                    "secretIdentity": "Jane Wilson",<br/>
+                    "powers": [<br/>
+                    "Million tonne punch",<br/>
+                    "Damage resistance",<br/>
+                    "Superhuman reflexes"<br/>
+                    ]<br/>
+                    }<br/>
+                    ]<br/>
+                </code>
+
+            </article>
         </section>
         <section class="main-section">
             <header></header>
