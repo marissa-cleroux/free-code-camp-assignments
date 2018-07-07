@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fbc65bc-5ba0-4247-aa72-7d42a90ad157" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/technical-documentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/technical-documentation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="technical-documentation.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="technical-documentation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/technical-documentation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="302" column="18" selection-start-line="302" selection-start-column="18" selection-end-line="302" selection-end-column="18" />
+            <state relative-caret-position="388">
+              <caret line="292" column="22" lean-forward="true" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
               <folding>
                 <element signature="e#6165#6171#0" expanded="true" />
                 <element signature="e#6171#6177#0" expanded="true" />
@@ -933,8 +933,17 @@
       <file leaf-file-name="documentation.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/documentation.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="137">
+              <caret line="65" selection-end-line="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="24" column="89" selection-start-line="24" selection-start-column="89" selection-end-line="24" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -962,6 +971,7 @@
     <findStrings>
       <find>XML</find>
       <find>Gettin</find>
+      <find>What_is</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -972,6 +982,7 @@
       <list>
         <option value="$PROJECT_DIR$/styles/documentation.css" />
         <option value="$PROJECT_DIR$/technical-documentation.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -982,8 +993,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="399" />
-    <option name="width" value="1199" />
+    <option name="x" value="200" />
+    <option name="width" value="1398" />
     <option name="height" value="867" />
   </component>
   <component name="ProjectView">
@@ -1060,15 +1071,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530985108987</updated>
-      <workItem from="1530985110767" duration="13811000" />
+      <workItem from="1530985110767" duration="14248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13811000" />
+    <option name="totallyTimeSpent" value="14248000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="399" y="0" width="1199" height="867" extended-state="0" />
+    <frame x="200" y="0" width="1398" height="867" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
@@ -1114,17 +1125,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/documentation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/technical-documentation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="302" column="18" selection-start-line="302" selection-start-column="18" selection-end-line="302" selection-end-column="18" />
+        <state relative-caret-position="388">
+          <caret line="292" column="22" lean-forward="true" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
           <folding>
             <element signature="e#6165#6171#0" expanded="true" />
             <element signature="e#6171#6177#0" expanded="true" />
@@ -2030,6 +2034,20 @@
             <element signature="e#31622#31628#0" expanded="true" />
             <element signature="e#31628#31634#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/documentation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="65" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="89" selection-start-line="24" selection-start-column="89" selection-end-line="24" selection-end-column="89" />
         </state>
       </provider>
     </entry>
