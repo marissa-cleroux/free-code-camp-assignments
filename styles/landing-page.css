@@ -80,10 +80,6 @@ main section #video {
   height: 53.2vw;
   margin-top: 20px;
 }
-main #third-target {
-  padding-top: 20%;
-  padding-bottom: 20%;
-}
 
 @media all and (min-width: 500px) {
   nav ul {
@@ -124,3 +120,4 @@ main #third-target {
     height: 568px;
   }
 }
+

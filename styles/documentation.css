@@ -1,12 +1,3 @@
-/*
-    #3C91E6 - bright blue
-    #342E37 - almost black
-    #A2D729 - lime green
-    #FAFFFD - off-white
-    #FA824C - peachy salmon
-
-*/
-
 body {
     background-color: #FFF;
     margin: auto;
@@ -33,12 +24,16 @@ nav ul {
 
 nav li {
     border-bottom: solid 2px #7C0E3E;
+    transition: background-color 2s;
 }
+
+nav li:hover { background-color: #E1E2E3; }
+
 nav a { text-decoration: none; }
 
 a { color: #000; }
 
-nav a:hover, main a:hover { color: #24897B; }
+main a:hover { color: #24897B; }
 
 section { border-top: dashed 2px #342E37; }
 
@@ -63,7 +58,10 @@ code {
     background-color: aliceblue;
 }
 
-.inline-code { font-family: monospace; }
+.inline-code {
+    font-family: monospace;
+    background-color: aliceblue;
+}
 
 img { max-width: 100%; }
 
