@@ -16,12 +16,12 @@ function drawDecal(ctx, w, h){
 
     ctx.beginPath();
     ctx.moveTo(0, h);
-    ctx.lineTo(w, 0);
+    ctx.lineTo(w, 50);
     ctx.lineTo(w, h);
     ctx.closePath();
-    ctx.strokeStyle = 'aliceblue';
+    ctx.strokeStyle = '#f0f8ff';
     ctx.stroke();
-    ctx.fillStyle = 'aliceblue';
+    ctx.fillStyle = '#f0f8ff';
     ctx.fill();
 }
 
