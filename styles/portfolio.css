@@ -5,42 +5,54 @@ body {
 #navbar {
     position: fixed;
     width: 100%;
+    padding-top: 10px;
     height: 70px;
     background-color: #fff;
-    border-bottom: 2px solid #E1E2E3;
+    text-transform: uppercase;
 }
 
+
 #navbar li { display: inline; }
+
+#navbar a {
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+}
 
 #welcome-section {
     height: 100vh;
     position: relative;
     padding-left: 15px;
-    font-family: 'Inconsolata', sans-serif;
-    font-size: 6em;
+    font-family: 'Inconsolata', monospace;
+    font-size: 8em;
     font-weight: 900;
 }
 
-#welcome-section h1 {
-    position: absolute;
-    top: 15%;
+#welcome-section h1, #welcome-section p {
     z-index: 20;
-}
-
-#welcome-section h2 {
-    position: absolute;
-    top: 25%;
-    z-index: 20;
-}
-
-h1, h2 {
-    line-height: 1;
-    margin: 0;
     font-weight: bold;
+    color: #000;
     background: url('https://marissa-cleroux.github.io/resources/astrology-astronomy-background-image-956981.jpg');
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+#welcome-section h1 { padding-top: 20%; }
+
+#welcome-canvas {
+    position: absolute;
+    top: -40px;
+    z-index: -10;
+}
+
+#project {
+    display: flex;
+    
+}
+
 
 
 
