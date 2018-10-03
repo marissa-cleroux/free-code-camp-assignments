@@ -14,7 +14,7 @@ body {
 }
 
 
-#navbar li {
+#navbar li, #contact li {
     display: inline;
     padding: 5px;
 }
@@ -93,10 +93,49 @@ main {
 }
 
 #about p {
-    border: 4px solid #003459;
     padding: 7px;
     line-height: 1.4em;
 }
+
+#about>p, #contact-form {
+    border: 4px solid #003459;
+}
+
+
+#contact {
+    height: 100vh;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.fab {
+    color: #000;
+    font-size: 3em;
+}
+
+#contact ul {
+    margin: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 2px;
+}
+
+form {
+    padding: 20px 0 20px 0;
+}
+input,textarea {
+    font-family: 'Open sans', sans-serif;
+    font-size: 1em;
+}
+
+input[type="text"], input[type="email"], textarea{
+    display: block;
+    margin: auto;
+    width: 65%;
+}
+
 
 
 
