@@ -2,7 +2,7 @@
 *Assignments I've done following the Free Code Camp course*
 
 ## [Random Quote Generator](https://scifiquotemachine.herokuapp.com)
-###[src](https://github.com/marissa-cleroux/quoteMachine)
+### [src](https://github.com/marissa-cleroux/quoteMachine)
 
 Used react to create a random quote generator. Also scraped quotes from good reads and created API to return a random quote. 
 
